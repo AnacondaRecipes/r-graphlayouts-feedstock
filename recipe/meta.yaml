@@ -31,12 +31,12 @@ requirements:
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
   host:
-    - r-base
+    - r-base {{r_version}}
     - r-rcpp
     - r-rcpparmadillo
     - r-igraph
   run:
-    - r-base
+    - r-base {{r_version }}
     - {{ native }}gcc-libs         # [win]
     - r-rcpp
     - r-rcpparmadillo
@@ -58,6 +58,11 @@ about:
     - LICENSE
 
 extra:
+  anaconda-services:
+    comment: "Built for customer"
+    recipe_maintainers:
+      - bkreider
+
   recipe-maintainers:
     - conda-forge/r
 
